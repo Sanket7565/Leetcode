@@ -2,52 +2,32 @@ class Solution
 {
     public int[] sortedSquares(int[] nums) 
     {
-         List<Integer> neg=new ArrayList();
-         List<Integer> pos=new ArrayList();
+        int i=0;
+        int j=nums.length-1;
+        int id=nums.length-1;
+        int res[]=new int[nums.length];
 
-         int res[]=new int[nums.length];
+        while(i<=j)
+        {
+            int leftsqr=nums[i]*nums[i];
+             int rightsqr=nums[j]*nums[j];
 
-         for(int i=0;i<nums.length;i++)
-         {
-            if(nums[i]<0)
-            {
-                neg.add(nums[i]*nums[i]);
-            }
-            else
-            {
-                pos.add(nums[i]*nums[i]);
-            }
-         }
+             if(leftsqr>=rightsqr)
+             {
+                res[id--]=leftsqr;
+                i++;
+             }
 
+             else
+             {
+                res[id--]=rightsqr;
+                j--;
+             }
 
+        }
 
-        int j=neg.size()-1;
-        int k=0;
-         int id=0;
-
-         while (j>=0 && k<pos.size())
-         {
-            if(neg.get(j)<=pos.get(k))
-            {
-                res[id++]=neg.get(j--);
-            }
-            else
-            {
-                 res[id++]=pos.get(k++);
-            }
-         }
-
-         while(j>=0)
-         {
-            res[id++]=neg.get(j--);
-         }
-
-         while (k<pos.size())
-         {
-          res[id++]=pos.get(k++);  
-         }
-
-         return res;
+        return res;
+         
     }
 
    
