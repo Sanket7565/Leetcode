@@ -1,7 +1,7 @@
 class Solution {
     public int removeElement(int[] nums, int val) 
     {
-        //Arrays.sort(nums);
+        Arrays.sort(nums);
 
         int left=0;
        int right=0;
