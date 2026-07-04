@@ -9,6 +9,7 @@ class Solution {
         {
             return 0;
         }
+        
         for(int high=0; high<s.length();high++)
         {
             char currentChar=s.charAt(high);
