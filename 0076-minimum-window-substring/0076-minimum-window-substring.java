@@ -37,11 +37,10 @@ class Solution {
 
         }
 
-        return minLength==Integer.MAX_VALUE? "" : s.substring(startIndex,startIndex+minLength); //start index =3 minlength=
+        return minLength==Integer.MAX_VALUE? "" : s.substring(startIndex,startIndex+minLength); //start index =3 minlength=4 so substring should start from 3 and go till length 4 i.e, 3+4=7 so start =3 end =7
 
         
     }
-
     boolean isValid(int [] have, int []needed)  
 
         {
