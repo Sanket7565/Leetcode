@@ -25,7 +25,7 @@ class Solution
         }
 
         ListNode curr=newHead;
-        ListNode next;
+        ListNode next=null;
 
         for(int i=left;i<=right;i++)
         {
