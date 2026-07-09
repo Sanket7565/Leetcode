@@ -35,7 +35,7 @@ public class Solution {
     }
 }
 
-/* two pointer approach also can be followed
+/* two pointer approach also can be followed without extra space of hashset
 
 headA moves towards end of LL
 headB moves towards end of LL
