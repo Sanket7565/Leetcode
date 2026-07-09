@@ -34,3 +34,19 @@ public class Solution {
         
     }
 }
+
+/* two pointer approach also can be followed
+
+headA moves towards end of LL
+headB moves towards end of LL
+
+if any node reached end start ahain from head of another list
+
+if headA reached end start again from headB
+if headB reaches end start again from headA
+
+when both meets return that node it's the intersection node
+
+
+
+*/
