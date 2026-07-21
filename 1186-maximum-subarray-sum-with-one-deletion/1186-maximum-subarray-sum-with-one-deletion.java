@@ -1,33 +1,36 @@
-class Solution {
-    public int maximumSum(int[] arr) 
+class Solution
+{
+    public int maximumSum(int[] arr)
     {
-        int noDelete=arr[0];
-        int oneDelete=0;
-        int oneDelete1=0;
-        int bestAns=arr[0];
+        int noDelete = arr[0];
+        int oneDelete = 0;
 
+        int bestAns = arr[0];
 
-        for(int i=1;i<arr.length;i++)
+        for(int i = 1; i < arr.length; i++)
         {
-            int prevNoDelete=noDelete;
-            //self
-            int self=arr[i];
+            int prevNoDelete = noDelete;
 
-            //contribute with no deletion
-             noDelete=noDelete+arr[i];
+            // self
+            int self = arr[i];
+            // contribute without deletion
+            noDelete = noDelete + arr[i];
 
-             noDelete=Math.max(self,noDelete);
+            noDelete = Math.max(self, noDelete);
 
-             oneDelete=oneDelete+arr[i];
-             oneDelete1=prevNoDelete;
+            // deletion already happened
+            oneDelete = oneDelete + arr[i];
 
-             oneDelete=Math.max(oneDelete,oneDelete1);
+            // delete current element
+            int deleteCurrent = prevNoDelete;
 
-             bestAns=Math.max(bestAns,Math.max(oneDelete,noDelete));
+            oneDelete = Math.max(oneDelete, deleteCurrent);
 
+            // update global answer
+            bestAns = Math.max(bestAns,
+                               Math.max(noDelete, oneDelete));
         }
 
         return bestAns;
-        
     }
 }
