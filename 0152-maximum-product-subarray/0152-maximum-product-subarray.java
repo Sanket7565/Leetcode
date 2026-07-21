@@ -7,17 +7,13 @@ class Solution {
 
         for(int i=1;i<nums.length;i++)
         {
-            int contributeMax=currentMax*nums[i];
+            int contributeMax=currentMax*nums[i]; //choice1
+            int contributeMin=currentMin*nums[i]; //choice2
+            int self=nums[i];  //choice3
 
-            int contributeMin=currentMin*nums[i];
-
-            int self=nums[i];
-
-            currentMin=Math.min(self,Math.min(contributeMax,contributeMin));
-
-            currentMax=Math.max(self,Math.max(contributeMax,contributeMin));
-
-            bestAns=Math.max(currentMax,bestAns);
+            currentMin=Math.min(self,Math.min(contributeMax,contributeMin)); //update currentmin
+            currentMax=Math.max(self,Math.max(contributeMax,contributeMin)); //update currentmax
+            bestAns=Math.max(currentMax,bestAns);  //update bestAns
         }
 
         return bestAns;
